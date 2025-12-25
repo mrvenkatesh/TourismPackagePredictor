@@ -77,11 +77,11 @@ xgb_model = xgb.XGBClassifier(scale_pos_weight=class_weight, random_state=42)
 # Define hyperparameter grid
 param_grid = {
     'xgbclassifier__n_estimators': [100],          # balanced bias–variance
-    'xgbclassifier__max_depth': 3,               # prevents overfitting
-    'xgbclassifier__colsample_bytree': 0.5,      # good feature subsampling
-    'xgbclassifier__colsample_bylevel': 0.5,     # stabilizes tree splits
-    'xgbclassifier__learning_rate': 0.05,        # slower, more stable learning
-    'xgbclassifier__reg_lambda': 0.5              # moderate L2 regularization
+    'xgbclassifier__max_depth': [3],               # prevents overfitting
+    'xgbclassifier__colsample_bytree': [0.5],      # good feature subsampling
+    'xgbclassifier__colsample_bylevel': [0.5],     # stabilizes tree splits
+    'xgbclassifier__learning_rate': [0.05],        # slower, more stable learning
+    'xgbclassifier__reg_lambda': [0.5]              # moderate L2 regularization
 }
 
 # Model pipeline
